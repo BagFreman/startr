@@ -1,13 +1,14 @@
-// Import section
+// Import bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss'
+@import 'node_modules/bootstrap/scss/modal.scss'
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss'
 
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-@import 'node_modules/bootstrap/scss/modal.scss' // Optional Bootstrap Grid
-@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+// Import plagin
+@import 'libs/owlcarousel/owl.carousel.sass'
 
 // Fonts
-
 $font-black: "CoreSansC-95Black", sans-serif, Arial
 $font-bold: "CoreSansC-65Bold", sans-serif, Arial
 $font-light: "CoreSansC-35Light", sans-serif, Arial
@@ -15,13 +16,12 @@ $font-medium: "CoreSansC-55Medium", sans-serif, Arial
 $font-regular: "CoreSansC-45Regular", sans-serif, Arial
 
 // Color
-
 $green: #00C652
 
 // Animation
-
 $anim-def: all .3s easi-in-out
 
+// Fonts include
 @mixin font($fname, $fstyle, $fweight, $furl)
 	@font-face
 		font-family: $fname
@@ -35,3 +35,24 @@ $anim-def: all .3s easi-in-out
 @include font('CoreSansC-65Bold', normal, 400, '../fonts/CoreSansC-65Bold.woff2')
 @include font('CoreSansC-35Light', normal, 400, '../fonts/CoreSansC-35Light.woff2')
 @include font('CoreSansC-55Medium', normal, 400, '../fonts/CoreSansC-55Medium.woff2')
+
+// CSS
+body
+	background-color: #fff
+	overflow-x: hidden
+	font-family: $font-regular
+	font-size: 16px
+	line-height: 24px
+	min-width: 320px
+	color: #000
+
+p, ul, li, table, label
+	margin: 0
+	padding: 0
+
+h1, h2, h3, h4, h5
+	font-weight: normal
+
+input, textarea, a
+	&:focus, &:active
+		outline: none

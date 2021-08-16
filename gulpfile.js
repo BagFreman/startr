@@ -1,10 +1,8 @@
-// VARIABLES & PATHS
-
-let preprocessor = 'sass', // Preprocessor (sass, scss, less, styl)
-	fileswatch = 'html,htm,txt,json,md,woff2', // List of files extensions for watching & hard reload (comma separated)
-	imageswatch = 'jpg,jpeg,png,webp,svg', // List of images extensions for watching & compression (comma separated)
-	baseDir = 'app', // Base directory path without «/» at the end
-	online = true; // If «false» - Browsersync will work offline without internet connection
+let preprocessor = 'sass',
+	fileswatch = 'html,htm,txt,json,md,woff2',
+	imageswatch = 'jpg,jpeg,png,webp,svg',
+	baseDir = 'app',
+	online = true;
 
 let paths = {
 
@@ -12,6 +10,7 @@ let paths = {
 		src: [
 			baseDir + '/libs/jquery/dist/jquery.min.js',
 			baseDir + '/libs/jquery.mask/jquery.mask.min.js',
+			baseDir + '/libs/owlcarousel/owl.carousel.js',
 			baseDir + '/js/app.js'
 		],
 		dest: baseDir + '/js',
@@ -28,18 +27,16 @@ let paths = {
 	},
 
 	deploy: {
-		hostname: 'username@yousite.com', // Deploy hostname
-		destination: 'yousite/public_html/', // Deploy destination
+		hostname: 'username@yousite.com',
+		destination: 'yousite/public_html/',
 		include: [/* '*.htaccess' */], // Included files to deploy
-		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excluded files from deploy
+		exclude: ['**/Thumbs.db', '**/*.DS_Store'],
 	},
 
 	cssOutputName: 'app.min.css',
 	jsOutputName: 'app.min.js',
 
 }
-
-// LOGIC
 
 const { src, dest, parallel, series, watch } = require('gulp');
 const sass = require('gulp-sass');
